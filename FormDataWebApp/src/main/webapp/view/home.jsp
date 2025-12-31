@@ -8,8 +8,8 @@
 </head>
 <body>
 <center style='text-align:center; color:Orange'>
-	<h1>Welcome Employee this is our homepage</h1>
-	<a href='register'>Click here Register..</a>
+	<h1>Welcome Destroyer this is our homepage</h1>
+	<a href='responce'>Click here to check out books</a>
 </center>
 </body>
 </html>
