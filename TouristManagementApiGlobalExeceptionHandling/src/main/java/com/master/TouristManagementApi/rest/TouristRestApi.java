@@ -33,54 +33,34 @@ public class TouristRestApi {
 	
 	@GetMapping("/getTourist/{id}")
 	public ResponseEntity<?> getTourist(@PathVariable Integer id){
-		try {
 			Tourist response=service.fetchTouristById(id);
 			return new ResponseEntity<Tourist>(response,HttpStatus.OK);
-		} catch (TouristNotFoundException e) {
-			return new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
-		}
 	}
 	
 	@GetMapping("/getAllTourist")
 	public ResponseEntity<?> getAllTourist(){
-		try {
 			List<Tourist> tourists=service.fetchAllTouristInfo();
 			return new ResponseEntity<List>(tourists,HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<String>("Users Not Found!",HttpStatus.INTERNAL_SERVER_ERROR);
-		}
 	}
 	
 	
 	//To Update Max Amount of Data Use PutMapping
 	@PutMapping("/updateTourist")
 	public ResponseEntity<String> updateTourist(@RequestBody Tourist tourist){
-		try {
 			String status=service.updateTourist(tourist);
 			return new ResponseEntity<String>(status,HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
-		}
 	}
 	
 	//To update minimal amount of Data use PatchMapping
 	@PatchMapping("/updateBudget/{id}/{budget}")
 	public ResponseEntity<String> updateTouristBudget(@PathVariable Integer id,@PathVariable Double budget){
-		try {
 			String status=service.updateTouristBudget(id,budget);
 			return new ResponseEntity<String>(status,HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-		}
 	}
 	
 	@DeleteMapping("/deleteTourist/{id}")
 	public ResponseEntity<String> deleteTouristByID(@PathVariable Integer id){
-		try {
 			String status=service.deleteTouristInfoByID(id);
 			return new ResponseEntity<String>(status,HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-		}
 	}
 }
