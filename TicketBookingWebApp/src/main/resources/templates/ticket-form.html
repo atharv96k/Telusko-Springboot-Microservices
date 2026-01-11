@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Ticket Booking Web APP</title>
+    <style>
+        /* Shared Style Theme */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 80px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        /* Form Container */
+        form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        td {
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        /* Input Styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcdde1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+        }
+
+        /* Submit Button Styling */
+        input[type="submit"] {
+            background-color: #e67e22; /* Different color to distinguish search from booking */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d35400;
+        }
+
+        /* Back to Booking link */
+        .back-link {
+            margin-top: 25px;
+            color: #7f8c8d;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kindly Enter the ticket number below to get Full Ticket Details</h1>
+
+    <form th:action="@{/get-ticket}" method="get">
+        <table>
+            <tr>
+                <td>Ticket Number :</td>
+                <td><input type="text" name="ticketNumber" required /></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Get Ticket" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <a th:href="@{/passanger-regform}" class="back-link">← Back to Booking Form</a>
+
+</body>
+</html>

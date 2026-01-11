@@ -1,6 +1,6 @@
 package com.master.TicketBookingWebApp.model;
  
-public class Passanger {
+public class Passenger {
  
 	private Integer pid;
 	
@@ -53,7 +53,7 @@ public class Passanger {
 	}
 
 	
-	public Passanger(Integer pid, String name, String departure, String arrival, String dateOfJourney) {
+	public Passenger(Integer pid, String name, String departure, String arrival, String dateOfJourney) {
 		super();
 		this.pid = pid;
 		this.name = name;
@@ -62,7 +62,7 @@ public class Passanger {
 		this.dateOfJourney = dateOfJourney;
 	}
 
-	public Passanger() {
+	public Passenger() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

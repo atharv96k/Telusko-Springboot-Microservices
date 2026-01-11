@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Ticket Details</title>
+    <style>
+        /* Shared Style Theme */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Ticket Info Container */
+        .ticket-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            border-top: 8px solid #27ae60; /* Green accent for "Confirmed" feel */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #edf2f7;
+            color: #4a5568;
+        }
+
+        /* Label column styling */
+        td:first-child {
+            font-weight: bold;
+            color: #2d3748;
+            width: 40%;
+        }
+
+        /* Value column styling */
+        td:last-child {
+            text-align: right;
+            color: #2c3e50;
+        }
+
+        /* Highlight Status */
+        .status-cell {
+            color: #27ae60 !important;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Link Styling */
+        .search-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .search-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ticket-card">
+        <h1>Full Ticket Information</h1>
+
+        <table>
+            <tr>
+                <td>Ticket ID:</td>
+                <td th:text="${ticket.ticketNumber}">1001</td>
+            </tr>
+            <tr>
+                <td>Ticket Status:</td>
+                <td class="status-cell" th:text="${ticket.status}">Confirmed</td>
+            </tr>
+            <tr>
+                <td>Passenger Name:</td>
+                <td th:text="${ticket.name}">Name</td>
+            </tr>
+            <tr>
+                <td>From:</td>
+                <td th:text="${ticket.departure}">Departure</td>
+            </tr>
+            <tr>
+                <td>To:</td>
+                <td th:text="${ticket.arrival}">Arrival</td>
+            </tr>
+            <tr>
+                <td>Date of Journey:</td>
+                <td th:text="${ticket.dateOfJourney}">Date</td>
+            </tr>
+            <tr>
+                <td>Fare:</td>
+                <td style="font-weight: bold; color: #e67e22;" th:text="${'₹' + ticket.ticketPrice}">0.00</td>
+            </tr>
+        </table>
+
+        <div style="text-align: center;">
+            <a class="search-link" th:href="@{/fetch-ticketf}">← Search another ticket</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Ticket Booking Web APP</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Success Message Styling */
+        p {
+            color: #27ae60;
+            font-weight: bold;
+            background: #e8f5e9;
+            padding: 10px 20px;
+            border-radius: 5px; 
+        }
+
+        /* Form Container (Table) */
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0 15px;
+        }
+
+        td {
+            padding: 5px 10px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        /* Input Field Styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dcdde1;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        /* Button Styling */
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        /* Link Styling */
+        a {
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fill the below form to book the ticket</h1>
+    
+    <p th:text="${ticketNumber}"></p>
+
+    <form th:action="@{/book-ticket}" th:object="${passenger}" method="post">
+        <table>
+            <tr>
+                <td>Passenger id :</td>
+                <td><input type="text" th:field="*{pid}" /></td>
+            </tr>
+            <tr>
+                <td>Passenger Name :</td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+
+            <tr>
+                <td>Departure :</td>
+                <td><input type="text" th:field="*{departure}" /></td>
+            </tr>
+
+            <tr>
+                <td>Arrival :</td>
+                <td><input type="text" th:field="*{arrival}" /></td>
+            </tr>
+
+            <tr>
+                <td>Date of Journey :</td>
+                <td><input type="text" th:field="*{dateOfJourney}" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Book Ticket" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <a th:href="@{/fetch-ticketf}">Get Full Ticket</a>
+</body>
+</html>
