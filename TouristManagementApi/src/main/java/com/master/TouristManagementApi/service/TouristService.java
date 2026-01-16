@@ -4,18 +4,23 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.master.TouristManagementApi.dao.ITouristRepo;
 import com.master.TouristManagementApi.exception.TouristNotFoundException;
 import com.master.TouristManagementApi.model.Tourist;
 
-
 @Service
+@Scope("prototype")
 public class TouristService implements ITouristService {
 
 	@Autowired
 	private ITouristRepo repo;
+	
+	public TouristService() {
+		System.out.println("TouristService bean is created");
+	}
 	
 	@Override
 	public String registerTourist(Tourist tourist) {

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: TouristManagementApi
+  datasource:
+    url: jdbc:mysql://localhost:3306/springrest
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  servlet:
+    context-path: /TouristManagementApi
+  port: 8484

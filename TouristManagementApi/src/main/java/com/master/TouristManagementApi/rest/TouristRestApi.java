@@ -4,6 +4,7 @@ package com.master.TouristManagementApi.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,19 +20,24 @@ import com.master.TouristManagementApi.exception.TouristNotFoundException;
 import com.master.TouristManagementApi.model.Tourist;
 import com.master.TouristManagementApi.service.ITouristService;
 
-@RestController
+@RestController 
+@Scope("session")
 public class TouristRestApi {
 
 	@Autowired
 	private ITouristService service;
 	
+	public TouristRestApi() { 
+		System.out.println("TouristRestAPI bean is Created");
+	}
+
 	@PostMapping("/register")
 	public ResponseEntity<String> registerTourist(@RequestBody Tourist tourist){
 		String response  = service.registerTourist(tourist);
 		return new ResponseEntity<String>(response,HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/getTourist/{id}")
+	@GetMapping("/getTourist/{id}")	
 	public ResponseEntity<?> getTourist(@PathVariable Integer id){
 		try {
 			Tourist response=service.fetchTouristById(id);
