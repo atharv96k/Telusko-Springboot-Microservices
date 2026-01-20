@@ -43,7 +43,7 @@ public class BatchConfig {
 		return reader;
 	}
 	
-	
+	//Used For 
 	private LineMapper<Customer> lineMapper() {
 		DefaultLineMapper<Customer> lineMapper = new DefaultLineMapper<>();
 		DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();

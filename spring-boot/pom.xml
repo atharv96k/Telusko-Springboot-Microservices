@@ -2,12 +2,5 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.master</groupId>
   <artifactId>spring-boot</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-  	<dependency>
-  		<groupId>com.master</groupId>
-  		<artifactId>SpringDataJPA1</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  </dependencies>
+  <version>0.0.1-SNAPSHOT</version> 
 </project>
