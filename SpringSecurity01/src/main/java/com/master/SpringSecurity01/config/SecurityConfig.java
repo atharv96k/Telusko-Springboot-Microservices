@@ -31,6 +31,7 @@ public class SecurityConfig {
 //				.password("atharv96k")
 //				.roles("admin")
 //				.build();
+		
 //		UserDetails user = User.withDefaultPasswordEncoder()
 //		.username("user")
 //		.password("abcd")

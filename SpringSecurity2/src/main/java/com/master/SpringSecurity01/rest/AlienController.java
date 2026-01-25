@@ -37,6 +37,7 @@ public class AlienController {
 	 public String getInfo(HttpServletRequest request) {
 		 return "The Session id is : "+request.getSession().getId();
 	 }
+	 
 	 @GetMapping("/getCsrfToken")
 	 public CsrfToken getCsrfToken(HttpServletRequest request) {
 		 CsrfToken csrfToken = (CsrfToken) request.getAttribute("_csrf");

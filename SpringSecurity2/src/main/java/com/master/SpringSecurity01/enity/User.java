@@ -9,16 +9,16 @@ import jakarta.persistence.Table;
 public class User {
 	
 	@Id
-	private String username;
+	private String name;
 	
 	private String password;
 
 	public String getUsername() {
-		return username;
+		return name;
 	}
 
 	public void setUsername(String username) {
-		this.username = username;
+		this.name = username;
 	}
 
 	public String getPassword() {
@@ -31,7 +31,7 @@ public class User {
 
 	public User(String username, String password) {
 		super();
-		this.username = username;
+		this.name = username;
 		this.password = password;
 	}
 
@@ -42,7 +42,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + "]";
+		return "User [username=" + name + ", password=" + password + "]";
 	}
 	
 }
