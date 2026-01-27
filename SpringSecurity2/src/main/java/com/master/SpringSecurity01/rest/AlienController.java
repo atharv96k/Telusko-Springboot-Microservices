@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.master.SpringSecurity01.model.Alien;
@@ -13,6 +14,7 @@ import com.master.SpringSecurity01.model.Alien;
 import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
+@RequestMapping("/alien")
 public class AlienController {
 
 	 List<Alien> list = new ArrayList<>(List.of(

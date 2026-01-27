@@ -14,11 +14,10 @@ public class UserPrinciple implements UserDetails {
 	@Autowired
 	private User user;
 	
-	public UserPrinciple(User user) {
-		this.user = user;
+	public UserPrinciple(User name) {
+		this.user = name;
 	}
-	
-	
+ 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
@@ -33,6 +32,5 @@ public class UserPrinciple implements UserDetails {
 	@Override
 	public String getUsername() { 
 		return user.getUsername();
-	}
-
+	} 
 }

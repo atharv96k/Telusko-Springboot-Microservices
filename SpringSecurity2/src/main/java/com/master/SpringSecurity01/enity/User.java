@@ -1,6 +1,8 @@
 package com.master.SpringSecurity01.enity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -9,6 +11,9 @@ import jakarta.persistence.Table;
 public class User {
 	
 	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	
 	private String name;
 	
 	private String password;
@@ -17,8 +22,8 @@ public class User {
 		return name;
 	}
 
-	public void setUsername(String username) {
-		this.name = username;
+	public void setUsername(String name) {
+		this.name = name;
 	}
 
 	public String getPassword() {
@@ -29,9 +34,9 @@ public class User {
 		this.password = password;
 	}
 
-	public User(String username, String password) {
+	public User(String name, String password) {
 		super();
-		this.name = username;
+		this.name = name;
 		this.password = password;
 	}
 
