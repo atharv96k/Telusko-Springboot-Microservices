@@ -60,11 +60,7 @@ public class JWTTokenService {
 	private Key getkey() { 
 		byte[] b = Decoders.BASE64.decode(secretKey);
 		return Keys.hmacShaKeyFor(b);
-	}
-
-	
-	
-	
+	} 
 	
 	//Not Coded By Hyder Abbas (Not Understanded)
 	
