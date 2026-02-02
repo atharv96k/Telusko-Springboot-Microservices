@@ -21,20 +21,16 @@ public class HibernateDelete {
 		Session session = null;
 		Transaction transaction = null;
 		boolean flag = false;
-		Integer count=null;
-		
+		Integer count=null; 
 		try {
 			session =sessionFactory.openSession();
-			transaction = session.beginTransaction();
-			
+			transaction = session.beginTransaction(); 
 			 count = session.createMutationQuery("DELETE from Student WHERE sid=:id")
-			.setParameter("id", 2).executeUpdate();
-			
+			.setParameter("id", 2).executeUpdate(); 
 			flag = true;
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			
+		}finally { 
 			if (flag == true) {
 				transaction.commit();
 				System.out.println("Transaction Success"
@@ -46,9 +42,6 @@ public class HibernateDelete {
 			}
 			session.close();
 			sessionFactory.close();
-		}
-
-
-	}
-
+		}  
+	} 
 }
