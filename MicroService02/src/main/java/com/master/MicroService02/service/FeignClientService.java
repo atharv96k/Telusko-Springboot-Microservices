@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(name = "MICROSERVICE-1")
+@FeignClient(name = "MICROSERVICE01")
 public interface FeignClientService {
 	
 	@GetMapping("/msg-m1")
