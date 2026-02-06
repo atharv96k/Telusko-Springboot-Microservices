@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+	<Appenders>
+		<!-- ConsoleAppender (ConsoleAppender): Writes logs to the standard console 
+			(System.out or System.err). -->
+		<Console name="LoggingToConsole" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>
+					%d - %c - [%M] - [%p] - %m - %n
+				</Pattern>
+			</PatternLayout>
+		</Console>
+		
+		<!-- FileAppender (FileAppender): Writes log messages to a designated file 
+			on the system. -->
+		<File name="LoggingToFile" fileName="logs/app.log">
+			<PatternLayout>
+				<Pattern>
+					%d - %c - [%M] - [%p] - %m - %n
+				</Pattern>
+			</PatternLayout>
+		</File>
+		
+		
+		<!-- RollingFileAppender (RollingFileAppender): A specialized file appender 
+			that rolls over, or rotates, log files once they reach a certain size or 
+			time limit, preventing, for instance, a single log file from filling up a 
+			disk.
+		
+			AsyncAppender (AsyncAppender): Enables asynchronous logging by wrapping 
+			other appenders, allowing logs to be written in a separate thread to improve 
+			application performance. 
+			
+			JDBCAppender (JDBCAppender): Configures log messages 
+			to be stored directly into a relational database. -->
+ 
+	</Appenders>
+
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="LoggingToConsole" />
+			<AppenderRef ref="LoggingToFile" />
+		</Root>
+	</Loggers>
+</Configuration>

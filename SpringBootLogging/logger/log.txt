@@ -1,0 +1,12 @@
+2026-02-06 17:42:58,387 - com.master.RestApiApp1.SpringBootLogging - [logStarting] - [INFO] - Starting SpringBootLogging using Java 21.0.8 with PID 17212 (C:\Users\Varad Mohite\eclipse-workspace\SpringBootLogging\target\classes started by Varad Mohite in C:\Users\Varad Mohite\eclipse-workspace\SpringBootLogging) - 
+2026-02-06 17:42:58,394 - com.master.RestApiApp1.SpringBootLogging - [logStartupProfileInfo] - [INFO] - No active profile set, falling back to 1 default profile: "default" - 
+2026-02-06 17:42:58,552 - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - [log] - [INFO] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable - 
+2026-02-06 17:42:58,553 - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - [log] - [INFO] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' - 
+2026-02-06 17:43:01,472 - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - [initialize] - [INFO] - Tomcat initialized with port 8080 (http) - 
+2026-02-06 17:43:01,517 - org.apache.catalina.core.StandardService - [log] - [INFO] - Starting service [Tomcat] - 
+2026-02-06 17:43:01,519 - org.apache.catalina.core.StandardEngine - [log] - [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.50] - 
+2026-02-06 17:43:01,659 - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - [log] - [INFO] - Initializing Spring embedded WebApplicationContext - 
+2026-02-06 17:43:01,661 - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - [prepareWebApplicationContext] - [INFO] - Root WebApplicationContext: initialization completed in 3102 ms - 
+2026-02-06 17:43:02,781 - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - [startServer] - [INFO] - LiveReload server is running on port 35729 - 
+2026-02-06 17:43:02,870 - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - [start] - [INFO] - Tomcat started on port 8080 (http) with context path '/' - 
+2026-02-06 17:43:02,901 - com.master.RestApiApp1.SpringBootLogging - [logStarted] - [INFO] - Started SpringBootLogging in 5.885 seconds (process running for 7.245) - 
